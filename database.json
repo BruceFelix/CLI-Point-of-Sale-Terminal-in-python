@@ -1,18 +1,9 @@
-{
-    "customers": [
-        {
-            "name": "BruceFelix Macharia",
-            "email": "brucefelixm@gmail.com",
-            "number": "0792743861",
-            "products": 0,
-            "expenditure": 0
-        },
-        {
-            "name": "Jeff",
-            "email": "jeff@gmail.com",
-            "number": "0792232232",
-            "products": 0,
-            "expenditure": 0
-        }
-    ]
-}
+[
+    {
+        "name": "BruceFelix Macharia",
+        "email": "brucefelixm@gmail.com",
+        "number": "0792743861",
+        "products": 0,
+        "expenditure": 0
+    }
+]
