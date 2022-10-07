@@ -68,4 +68,30 @@ def delete_user():
             i +=1
     with open (filename, "w") as f:
         json.dump(new_list_of_users, f, indent=4)
-delete_user()
+
+def edit_data():
+    """
+    Edit the selected user.
+    """
+    new_list_of_users = []
+    view_data() # prints user data
+    data = loading_json_file_content() # loads user data from the json file
+    data_length = len(data) -1 # gets the total value of users in the json file
+    print("Which user would you like to update? \n")
+    delete_user_option = input(f"Select a number 0 - {data_length}\n")
+    i = 0
+    for entry in data:
+        if i == int(delete_user_option):
+            name = entry["name"]
+            email = entry["email"]
+            number = entry["number"]
+            name = input("Enter the new name your want: \n")
+            email = input("Enter the new email your want: \n")
+            number = input("Enter the new number your want: \n")
+            new_list_of_users.append({"name": name, "email" : email, "number" : number })
+        else:
+            new_list_of_users.append(entry)
+            i +=1
+    with open (filename, "w") as f:
+        json.dump(new_list_of_users, f, indent=4)
+edit_data()
