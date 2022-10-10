@@ -1,21 +1,21 @@
-#IMPORTS
+# IMPORTS
 #####################
 import pyfiglet
 from termcolor import colored
 
-#MAIN PROGRAM
+# MAIN PROGRAM
 ##########
 
-result = pyfiglet.figlet_format("LUKU SHOP", font = "doh", width= 180 ) # creates arwork with the words]
-welcome_message ="""
+result = pyfiglet.figlet_format("LUKU SHOP", font="doh", width=180)  # creates arwork with the words]
+welcome_message = """
 *************************************************************************************************************************************
 Welcome to Bruce Shoe store. You'll find a variety of men shoes kindly buy as many as possible cause you can never have enough shoes.
 *************************************************************************************************************************************
 """
-print("___________________________________________________________________________________________________________________________")
+print(
+    "___________________________________________________________________________________________________________________________")
 print(colored(result, "blue"))
 print(colored(welcome_message, "blue"))
-
 
 
 def disp_menu():
@@ -26,6 +26,8 @@ def disp_menu():
         3. Queries
         Q. To quite the program
     """)
+
+
 disp_menu()
 while True:
     user_input = input("Please choose an option:\n")
@@ -44,4 +46,3 @@ while True:
         break
     else:
         print("Please enter a valid value in the range of 0 - 3")
-        
