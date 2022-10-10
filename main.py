@@ -2,6 +2,7 @@
 #####################
 import pyfiglet
 from termcolor import colored
+from customeroperations.customer import customer_program
 
 # from productoperations.products import *
 # from customeroperations.customer import *
@@ -36,8 +37,7 @@ def main_program():
         disp_menu()
         user_input = input("Please choose an option:\n")
         if user_input == "1":
-            print("Welcome")
-            break
+            customer_program()
         elif user_input == "2":
             print("Welcome")
             break

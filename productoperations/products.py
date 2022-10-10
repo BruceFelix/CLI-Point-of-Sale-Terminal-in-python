@@ -1,11 +1,11 @@
 # Imports
 ####################
 import json
-from customeroperations import customer
+from customeroperations.customer import user_json_file
 
 # Global variables
 #####################
-filename = "products.json"
+filename = "/home/cybernomand/Desktop/Desktop/SEPA/Sprint one/CLI-Point-of-Sale-Terminal-in-python/productoperations/products.json"
 
 
 def product_operations():
@@ -122,7 +122,7 @@ def edit_product():
 
 def purchase_product():
     # customer = input("Please enter your email: \n")
-    users = customer.user_json_file()
+    users = user_json_file()
     print(users)
 
 
@@ -142,8 +142,8 @@ def products_program():
         elif operator_choice == "4":
             view_product()
         elif operator_choice == "5":
-            # purchase_product()
-            pass
+            purchase_product()
+
         elif operator_choice == "6":
             pass
         elif operator_choice.upper() == "Q":
@@ -152,4 +152,3 @@ def products_program():
             print("Please a valid option.")
 
 
-products_program()

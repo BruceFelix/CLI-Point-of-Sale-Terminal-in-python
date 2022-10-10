@@ -1,8 +1,7 @@
 # imports
 ######################
-from ast import operator
 import json
-from tkinter import W
+from main import main_program
 
 # Global Vairable
 #####################
@@ -156,11 +155,9 @@ def customer_program():
         elif operator_choice == "4":
             view_user()
         elif operator_choice == "5":
+            # main_program()
             pass
         elif operator_choice.upper() == "Q":
             break
         else:
             print("Please a valid option.")
-
-
-customer_program()
