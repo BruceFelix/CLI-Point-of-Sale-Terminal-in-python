@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Balenciaga",
+        "quantity": "200",
+        "price": "3500"
+    },
+    {
+        "name": "Timberland",
+        "quantity": "100",
+        "price": "5000"
+    },
+    {
+        "name": "Clarks",
+        "quantity": "20",
+        "price": "3500"
+    }
+]
