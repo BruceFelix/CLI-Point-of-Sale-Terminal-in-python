@@ -1,14 +1,11 @@
-# imports
+#imports
 ######################
 from ast import operator
 import json
 from tkinter import W
-
 # Global Vairable
 #####################
 filename = "customerdb.json"
-
-
 def customer_operations():
     """
     Has the customer operations.
@@ -21,7 +18,6 @@ def customer_operations():
     print("\t4 To view users in the system.")
     print("\t5 To go back to the main menu.")
     print("\tQ To quit the program.")
-
 
 def new_customer():
     """
@@ -37,15 +33,13 @@ def new_customer():
     user["expenditure"] = 0
     return user
 
-
 def user_json_file():
     """
     Opens the json file and reads its content
     """
-    with open(filename) as file:  # opens json file
-        data = json.load(file)  # loads the data
+    with open(filename)  as file: #opens json file
+        data = json.load(file) # loads the data
     return data
-
 
 def view_user():
     """
@@ -58,26 +52,24 @@ def view_user():
         print(entry)
         i += 1
 
-
 def create_new_user():
     """
     Adds a new user to the json file
     """
-    with open(filename) as file:  # opens json file
-        temp = json.load(file)  # loads the data
-        temp.append(new_customer())  # appends the data to the temporary variable
-    with open(filename, "w") as f:
+    with open(filename)  as file: #opens json file
+        temp = json.load(file) # loads the data
+        temp.append(new_customer()) # appends the data to the temporary variable
+    with open (filename, "w") as f:
         json.dump(temp, f, indent=4)
-
 
 def delete_user():
     """
     Deletes the selected user.
     """
     new_list_of_users = []
-    view_user()  # prints user data
-    data = user_json_file()  # loads user data from the json file
-    data_length = len(data) - 1  # gets the total value of users in the json file
+    view_user() # prints user data
+    data = user_json_file() # loads user data from the json file
+    data_length = len(data) -1 # gets the total value of users in the json file
     print("Which user would you like to delete? \n")
     delete_user_option = input(f"Select a number 0 - {data_length}\n")
     i = 0
@@ -87,20 +79,19 @@ def delete_user():
             # this part skips the part we want to delete and appends the rest to the file
             i += 1
         else:
-            new_list_of_users.append(entry)  # creates a new file with the deleted intended user
-            i += 1
-    with open(filename, "w") as f:
+            new_list_of_users.append(entry) #creates a new file with the deleted intended user
+            i +=1
+    with open (filename, "w") as f:
         json.dump(new_list_of_users, f, indent=4)
-
 
 def edit_user():
     """
     Edit the selected user.
     """
     new_list_of_users = []
-    view_user()  # prints user data
-    data = user_json_file()  # loads user data from the json file
-    data_length = len(data) - 1  # gets the total value of users in the json file
+    view_user() # prints user data
+    data = user_json_file() # loads user data from the json file
+    data_length = len(data) -1 # gets the total value of users in the json file
     print("Which user would you like to update? \n")
     delete_user_option = input(f"Select a number 0 - {data_length}\n")
     i = 0
@@ -115,13 +106,12 @@ def edit_user():
             name = input("Enter the new name your want: \n")
             email = input("Enter the new email your want: \n")
             number = input("Enter the new number your want: \n")
-            new_list_of_users.append({"name": name, "email": email, "number": number})
+            new_list_of_users.append({"name": name, "email" : email, "number" : number })
         else:
             new_list_of_users.append(entry)
-            i += 1
-    with open(filename, "w") as f:
+            i +=1
+    with open (filename, "w") as f:
         json.dump(new_list_of_users, f, indent=4)
-
 
 while True:
     """
