@@ -5,7 +5,7 @@ import json
 from tkinter import W
 # Global Vairable
 #####################
-filename = "customer.json"
+filename = "customerdb.json"
 def customer_operations():
     """
     Has the customer operations.
@@ -33,7 +33,7 @@ def new_customer():
     user["expenditure"] = 0
     return user
 
-def loading_json_file_content():
+def user_json_file():
     """
     Opens the json file and reads its content
     """
@@ -45,7 +45,7 @@ def view_user():
     """
     Prints User data.
     """
-    temp = loading_json_file_content()
+    temp = user_json_file()
     i = 0
     for entry in temp:
         print(f"User: {i} ")
@@ -68,7 +68,7 @@ def delete_user():
     """
     new_list_of_users = []
     view_user() # prints user data
-    data = loading_json_file_content() # loads user data from the json file
+    data = user_json_file() # loads user data from the json file
     data_length = len(data) -1 # gets the total value of users in the json file
     print("Which user would you like to delete? \n")
     delete_user_option = input(f"Select a number 0 - {data_length}\n")
@@ -90,7 +90,7 @@ def edit_user():
     """
     new_list_of_users = []
     view_user() # prints user data
-    data = loading_json_file_content() # loads user data from the json file
+    data = user_json_file() # loads user data from the json file
     data_length = len(data) -1 # gets the total value of users in the json file
     print("Which user would you like to update? \n")
     delete_user_option = input(f"Select a number 0 - {data_length}\n")

@@ -2,6 +2,10 @@
 ####################
 from itertools import product
 import json
+import sys
+sys.path.append('/home/cybernomand/Desktop/Desktop/SEPA/Sprint one/CLI-Point-of-Sale-Terminal-in-python/customer/customer')
+from  customer import user_json_file
+
 #Global variables
 #####################
 filename = "products.json"
@@ -17,7 +21,8 @@ def product_operations():
     print("\t2 To delete product.")
     print("\t3 To update product.")
     print("\t4 To view products in the system.")
-    print("\t5 To go back to the main menu.")
+    print("\t5 Buy product.")
+    print("\t6 To go back to the main menu.")
     print("\tQ To quit the program.")
 
 def new_product():
@@ -29,8 +34,9 @@ def new_product():
     # gets user details and adds them to the user dictionary.
     product["name"] = input("Name: ")
     product["quantity"] = input("Quantity: ")
+    product["price"] = input("Selling price: ")
     return product
-def loading_json_file_content():
+def products_json_file():
     """
     Opens the json file and reads its content
     """
@@ -41,7 +47,7 @@ def view_product():
     """
     Prints User data.
     """
-    temp = loading_json_file_content()
+    temp = products_json_file()
     i = 0
     for entry in temp:
         print(f"Product: {i} ")
@@ -62,7 +68,7 @@ def delete_product():
     """
     new_list_of_products = []
     view_product() # prints user data
-    data = loading_json_file_content() # loads user data from the json file
+    data = products_json_file() # loads user data from the json file
     data_length = len(data) -1 # gets the total value of users in the json file
     print("Which product would you like to delete? \n")
     delete_product_option = input(f"Select a number 0 - {data_length}\n")
@@ -77,14 +83,13 @@ def delete_product():
             i +=1
     with open (filename, "w") as f:
         json.dump(new_list_of_products, f, indent=4)
-
 def edit_product():
     """
     Edit the selected user.
     """
     new_list_of_products = []
     view_product() # prints user data
-    data = loading_json_file_content() # loads user data from the json file
+    data = products_json_file() # loads user data from the json file
     data_length = len(data) -1 # gets the total value of users in the json file
     print("Which product would you like to update? \n")
     delete_product_option = input(f"Select a number 0 - {data_length}\n")
@@ -104,6 +109,10 @@ def edit_product():
             i +=1
     with open (filename, "w") as f:
         json.dump(new_list_of_products, f, indent=4)
+def purchase_product():
+    customer = input("Please enter your email: \n")
+    users = user_json_file()
+    print(users)
 
 while True:
     """
@@ -120,8 +129,13 @@ while True:
     elif operator_choice == "4":
         view_product()
     elif operator_choice == "5":
+        purchase_product()
+    elif operator_choice == "6":
         pass
     elif operator_choice.upper() == "Q":
         break
     else:
         print("Please a valid option.")
+# purchase_product()    
+
+purch
