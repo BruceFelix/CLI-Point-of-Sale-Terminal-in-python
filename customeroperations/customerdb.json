@@ -10,5 +10,12 @@
         "number": "0242342332",
         "products": 0,
         "expenditure": 0
+    },
+    {
+        "name": "James Wong",
+        "email": "james@gmail.com",
+        "number": "0724889293",
+        "products": 0,
+        "expenditure": 0
     }
 ]

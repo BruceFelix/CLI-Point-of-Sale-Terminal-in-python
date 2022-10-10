@@ -1,10 +1,6 @@
 # Imports
 ####################
-from itertools import product
 import json
-import sys
-from customeroperations.customer import *
-from main import *
 
 # Global variables
 #####################
@@ -50,7 +46,7 @@ def products_json_file():
 
 def view_product():
     """
-    Prints User data.
+    Prints product data.
     """
     temp = products_json_file()
     i = 0
@@ -96,7 +92,7 @@ def delete_product():
 
 def edit_product():
     """
-    Edit the selected user.
+    Edit the selected product.
     """
     new_list_of_products = []
     view_product()  # prints user data
@@ -114,7 +110,8 @@ def edit_product():
             quantity = entry["quantity"]
             name = input("Enter the new name your want: \n")
             quantity = input("Enter the new quantity your want: \n")
-            new_list_of_products.append({"name": name, "quantity": quantity})
+            price = input("Enter the new price your want: \n")
+            new_list_of_products.append({"name": name, "quantity": quantity, "price" : price})
         else:
             new_list_of_products.append(entry)
             i += 1
@@ -122,13 +119,13 @@ def edit_product():
         json.dump(new_list_of_products, f, indent=4)
 
 
-def purchase_product():
-    customer = input("Please enter your email: \n")
-    users = user_json_file()
-    print(users)
+# def purchase_product():
+#     customer = input("Please enter your email: \n")
+#     users = user_json_file()
+#     print(users)
 
 
-def products_operations():
+def products_program():
     while True:
         """
         Displays user operations.
@@ -144,7 +141,8 @@ def products_operations():
         elif operator_choice == "4":
             view_product()
         elif operator_choice == "5":
-            purchase_product()
+            # purchase_product()
+            pass
         elif operator_choice == "6":
             pass
         elif operator_choice.upper() == "Q":
@@ -153,4 +151,4 @@ def products_operations():
             print("Please a valid option.")
 
 
-products_operations()
+products_program()

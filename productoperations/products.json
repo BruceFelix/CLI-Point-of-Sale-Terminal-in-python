@@ -13,5 +13,10 @@
         "name": "Clarks",
         "quantity": "20",
         "price": "3500"
+    },
+    {
+        "name": "Nikes",
+        "quantity": "100",
+        "price": "2500"
     }
 ]
