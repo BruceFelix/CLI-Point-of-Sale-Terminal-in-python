@@ -17,5 +17,19 @@
         "number": "0724889293",
         "products": 0,
         "expenditure": 0
+    },
+    {
+        "name": "Lynet Mwihaki",
+        "email": "lynet@gmail.co",
+        "number": "078239482",
+        "products": 0,
+        "expenditure": 0
+    },
+    {
+        "name": "Antony Mwangi",
+        "email": "antony@gmail.com",
+        "number": "0723928962",
+        "products": 0,
+        "expenditure": 0
     }
 ]

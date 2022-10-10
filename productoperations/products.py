@@ -1,6 +1,7 @@
 # Imports
 ####################
 import json
+from customeroperations import customer
 
 # Global variables
 #####################
@@ -111,7 +112,7 @@ def edit_product():
             name = input("Enter the new name your want: \n")
             quantity = input("Enter the new quantity your want: \n")
             price = input("Enter the new price your want: \n")
-            new_list_of_products.append({"name": name, "quantity": quantity, "price" : price})
+            new_list_of_products.append({"name": name, "quantity": quantity, "price": price})
         else:
             new_list_of_products.append(entry)
             i += 1
@@ -119,10 +120,10 @@ def edit_product():
         json.dump(new_list_of_products, f, indent=4)
 
 
-# def purchase_product():
-#     customer = input("Please enter your email: \n")
-#     users = user_json_file()
-#     print(users)
+def purchase_product():
+    # customer = input("Please enter your email: \n")
+    users = customer.user_json_file()
+    print(users)
 
 
 def products_program():

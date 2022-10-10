@@ -6,8 +6,8 @@ from tkinter import W
 
 # Global Vairable
 #####################
-filename = "customerdb.json"
 
+filename = "/home/cybernomand/Desktop/Desktop/SEPA/Sprint one/CLI-Point-of-Sale-Terminal-in-python/customeroperations/customerdb.json"
 
 def customer_operations():
     """
