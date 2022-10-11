@@ -2,10 +2,12 @@
 ####################
 import json
 from customeroperations.customer import user_json_file
+from customeroperations.customer import goods_bought
 
 # Global variables
 #####################
-filename = "/home/cybernomand/Desktop/Desktop/SEPA/Sprint one/CLI-Point-of-Sale-Terminal-in-python/productoperations/products.json"
+filename = "/home/cybernomand/Desktop/Desktop/SEPA/Sprint " \
+           "one/CLI-Point-of-Sale-Terminal-in-python/productoperations/products.json "
 
 
 def product_operations():
@@ -52,8 +54,7 @@ def view_product():
     temp = products_json_file()
     i = 0
     for entry in temp:
-        print(f"Product: {i} ")
-        print(entry)
+        print(f"Product: {i} ", entry)
         i += 1
 
 
@@ -100,19 +101,17 @@ def edit_product():
     data = products_json_file()  # loads user data from the json file
     data_length = len(data) - 1  # gets the total value of users in the json file
     print("Which product would you like to update? \n")
-    delete_product_option = input(f"Select a number 0 - {data_length}\n")
+    update_product_option = input(f"Select a number 0 - {data_length}\n")
     i = 0
     for entry in data:
-        if i == int(delete_product_option):
+        if i == int(update_product_option):
             """
             Takes the  selected user details and updates them to new values.
             """
-            name = entry["name"]
-            quantity = entry["quantity"]
             name = input("Enter the new name your want: \n")
             quantity = input("Enter the new quantity your want: \n")
-            price = input("Enter the new price your want: \n")
-            new_list_of_products.append({"name": name, "quantity": quantity, "price": price})
+            shoe_price = input("Enter the new price your want: \n")
+            new_list_of_products.append({"name": name, "quantity": quantity, "price": shoe_price})
         else:
             new_list_of_products.append(entry)
             i += 1
@@ -121,9 +120,42 @@ def edit_product():
 
 
 def purchase_product():
-    # customer = input("Please enter your email: \n")
+    """
+    Function used to purchase product.
+    """
+    # customer = input("Please enter your email: \n") #remember to return this
+
+    customer = "cybernomand@gmail.com"
     users = user_json_file()
-    print(users)
+    for entry in users:
+        if customer in entry["email"]:  # remember to use users input
+            print(entry)
+            view_product()
+            shoes = products_json_file()
+            # buyer_choice = input("Which type of shoes do you need to buy? ") # remember to comment out this.
+            buyer_choice = "Balenciaga"
+            for shoe in shoes:
+                if buyer_choice == shoe["name"]:
+                    pairs = input("How many do you want: ")
+                    price = int(pairs) * int(shoe["price"])
+                    print(price)
+
+            print(f"""
+            ---------------------------------------
+            Customer Receipt
+            ---------------------------------------
+            | Customer name : {entry["name"]}
+            | Product bought: {shoe['name']}
+            | Total purchase: {price}
+            ---------------------------------------
+            Thank for shopping at Luku Shop
+            ---------------------------------------
+            """)
+            goods_bought(pairs, price, entry['email'])
+        else:
+            continue
+
+purchase_product()
 
 
 def products_program():
@@ -151,4 +183,4 @@ def products_program():
         else:
             print("Please a valid option.")
 
-
+# purchase_product()

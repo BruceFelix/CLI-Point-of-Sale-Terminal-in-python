@@ -2,10 +2,8 @@
 #####################
 import pyfiglet
 from termcolor import colored
-from customeroperations.customer import customer_program
-
-# from productoperations.products import *
 # from customeroperations.customer import *
+# from productoperations.products import *
 
 # MAIN PROGRAM
 ##########
@@ -39,8 +37,7 @@ def main_program():
         if user_input == "1":
             customer_program()
         elif user_input == "2":
-            print("Welcome")
-            break
+            products_program()
         elif user_input == "3":
             print("Welcome")
             break

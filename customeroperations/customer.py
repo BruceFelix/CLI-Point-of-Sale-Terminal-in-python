@@ -1,12 +1,12 @@
 # imports
 ######################
 import json
-from main import main_program
 
 # Global Vairable
 #####################
 
 filename = "/home/cybernomand/Desktop/Desktop/SEPA/Sprint one/CLI-Point-of-Sale-Terminal-in-python/customeroperations/customerdb.json"
+
 
 def customer_operations():
     """
@@ -122,13 +122,19 @@ def edit_user():
                 """
                 Takes the  selected user details and updates them to new values.
                 """
-                name = entry["name"]
-                email = entry["email"]
-                number = entry["number"]
                 name = input("Enter the new name your want: \n")
                 email = input("Enter the new email your want: \n")
                 number = input("Enter the new number your want: \n")
-                new_list_of_users.append({"name": name, "email": email, "number": number})
+                product = entry["products"]
+                expenditure = entry["expenditure"]
+                updated_user = {
+                    "name": name,
+                    "email": email,
+                    "number": number,
+                    "products": 0,
+                    "expenditure": 0
+                }
+                new_list_of_users.append(updated_user)
             else:
                 new_list_of_users.append(entry)
                 i += 1
@@ -137,6 +143,33 @@ def edit_user():
     elif choice.lower() == "no":
         print("Kindly proceed to the main menu")
         customer_program()
+
+
+def goods_bought(quantity, price, email):
+    """
+    Inputs the goods that the user has bought in the db.
+    """
+    updated_user_list = []
+    user_details = user_json_file()
+    for user in user_details:
+        if email == user["email"]:
+            name = user["name"]
+            email = user["email"]
+            number = user["number"]
+            user['products'] = quantity
+            user['expenditure'] = price
+            updated_user = {
+                "name": name,
+                "email": email,
+                "number": number,
+                "products": user["products"],
+                "expenditure": user["expenditure"]
+            }
+            updated_user_list.append(updated_user)
+        else:
+            updated_user_list.append(user)
+    with open(filename, "w") as f:
+        json.dump(updated_user_list, f, indent=4)
 
 
 def customer_program():
