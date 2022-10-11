@@ -5,7 +5,7 @@ import json
 # Global Vairable
 #####################
 
-filename = "/home/cybernomand/Desktop/Desktop/SEPA/Sprint one/CLI-Point-of-Sale-Terminal-in-python/customeroperations/customerdb.json"
+filename = "/home/cybernomand/Desktop/Desktop/Jenga School/SEPA/Sprint one/CLI-Point-of-Sale-Terminal-in-python/customeroperations/customerdb.json"
 
 
 def customer_operations():
@@ -156,8 +156,8 @@ def goods_bought(quantity, price, email):
             name = user["name"]
             email = user["email"]
             number = user["number"]
-            user['products'] = quantity
-            user['expenditure'] = price
+            user['products'] = int(user["products"]) + int(quantity)
+            user['expenditure'] = int(price) + int(user['expenditure'])
             updated_user = {
                 "name": name,
                 "email": email,
