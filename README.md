@@ -11,7 +11,7 @@ The program's key features are:
 ***GOAL OF THE PROGRAM***
 
 Implement a python program that starts with a menu, gets user menu choice and proceeds to execute the subprogram associated with the menu.
-The data will be stored in a text file.
+The data will be stored in a JSON file.
 
 
                
