@@ -157,57 +157,70 @@ def check_user(customer):
     return False
 
 
+def display_shoes():
+    """
+    Displays the shoes in store with their ids
+    """
+    print("What type of shoes do you need to buy?")
+    shoes = products_json_file()
+    for shoe_id, value in enumerate(shoes):
+        print(f"For {value['name']} at {value['price']} - enter {shoe_id}")
+
+
 def purchase_product():
     """
     Function used to purchase product.
     """
     users = user_json_file()
+    shoes = products_json_file()
     customer = input("Please enter your email: \n")
     index = check_user(customer)
     if check_user(customer):
-        shoes = products_json_file()
-        view_product()
         cart = []
         while True:
-            print("Kindly choose the goods you want")
-            print("What type of shoes do you need to buy?")
-            for shoe_id, value in enumerate(shoes):
-                print(f"For {value['name']} at {value['price']} - enter {shoe_id}")
-            buyer_choice = input("Which shoe do you want?")
-            if buyer_choice == shoe_id:
-                pairs = input("How many do you want: ")
-                price = int(pairs) * int(shoes["price"])
-                print(price)
-                print(f"""
-                    ---------------------------------------
-                    Customer Receipt
-                    ---------------------------------------
-                    | Customer name : {users[int(index)]["name"]}
-                    | Product bought: {shoes['name']}
-                    | Total purchase: {price}
-                    ---------------------------------------
-                    Thank for shopping at Luku Shop
-                    ---------------------------------------
-                    """)
-            goods_bought(pairs, price, users[int(index)]['email'])
+            display_shoes()
+            buyer_choice = input("Which shoe do you want?\n")
+            pairs = input("How many pairs do you need?\n")
+            cart.append([shoes[int(buyer_choice)]["name"], int(pairs), shoes[int(buyer_choice)]["price"], int(pairs) * int(shoes[int(buyer_choice)]["price"])])
             print("Do you want to continue shopping? ")
-            print("yes ")
-            print("no ")
+            print("* yes ")
+            print("* no ")
             user_choice = input("")
-            while True:
-                if user_choice.lower() == "yes":
-                    continue
-                elif user_choice.lower() == "no":
-                    break
-                else:
-                    print("Please choose valid answer.")
-            # goods_sold(buyer_choice, pairs)
+            if user_choice.lower() == "yes":
+                continue
+            elif user_choice.lower() == "no":
+                break
+            else:
+                print("Please choose valid answer.")
+        print(cart)
+        print(f"""
+-------------------------------------------------
+Customer Receipt
+-------------------------------------------------
+| Customer name: {users[int(index)]["name"]}
+|           Products Bought
+_________________________________________________
+        """)
+        print("""
+| Product  Quantity     price        
+        """)
+        for i in cart:
+            print(f"""
+| {i[0]} - {i[1]}      : {i[2]}  each
+            """)
+        print(f"""
+| Total purchase cost  : {cart[0][3]}
+        """)
+        total_goods_bought = 0
+        # goods_sold(cart[0], cart[1])
+        # goods_bought(cart[1], cart[2], users[int(index)]["email"])
+        print(cart)
+
     else:
         print("The is no such user kindly register them first.")
         create_new_user()
         print("Thank you for registering you may proceed.")
         purchase_product()
-
 
 purchase_product()
 
@@ -238,3 +251,20 @@ def products_program():
             print("Please a valid option.")
 
 # purchase_product()
+# def something():
+#     if buyer_choice == shoe_id:
+#         pairs = input("How many do you want: ")
+#         price = int(pairs) * int(shoes["price"])
+#         print(price)
+#         print(f"""
+#             ---------------------------------------
+#             Customer Receipt
+#             ---------------------------------------
+#             | Customer name : {users[int(index)]["name"]}
+#             | Product bought: {shoes['name']}
+#             | Total purchase: {price}
+#             ---------------------------------------
+#             Thank for shopping at Luku Shop
+#             ---------------------------------------
+#             """)
+# # goods_bought(pairs, price, users[int(index)]['email'])
