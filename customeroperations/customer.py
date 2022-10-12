@@ -1,8 +1,7 @@
 # imports
 ######################
 import json
-
-# Global Vairable
+# Global Variable
 #####################
 
 filename = "/home/cybernomand/Desktop/Desktop/Jenga School/SEPA/Sprint one/CLI-Point-of-Sale-Terminal-in-python/customeroperations/customerdb.json"
@@ -18,7 +17,6 @@ def customer_operations():
     print("\t2 To delete User.")
     print("\t3 To update User.")
     print("\t4 To view users in the system.")
-    print("\t5 To go back to the main menu.")
     print("\tQ To quit the program.")
 
 
@@ -131,8 +129,8 @@ def edit_user():
                     "name": name,
                     "email": email,
                     "number": number,
-                    "products": 0,
-                    "expenditure": 0
+                    "products": product,
+                    "expenditure": expenditure
                 }
                 new_list_of_users.append(updated_user)
             else:
@@ -157,7 +155,7 @@ def goods_bought(quantity, price, email):
             email = user["email"]
             number = user["number"]
             user['products'] = int(user["products"]) + int(quantity)
-            user['expenditure'] = int(price) + int(user['expenditure'])
+            user['expenditure'] = int(user['expenditure']) + int(price)
             updated_user = {
                 "name": name,
                 "email": email,
@@ -187,10 +185,8 @@ def customer_program():
             edit_user()
         elif operator_choice == "4":
             view_user()
-        elif operator_choice == "5":
-            # main_program()
-            pass
         elif operator_choice.upper() == "Q":
             break
         else:
             print("Please a valid option.")
+
