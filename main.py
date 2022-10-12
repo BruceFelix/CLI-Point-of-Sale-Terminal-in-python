@@ -2,13 +2,14 @@
 #####################
 import pyfiglet
 from termcolor import colored
-# from customeroperations.customer import *
-# from productoperations.products import *
+from customeroperations.customer import customer_program
+from productoperations.products import products_program
+from purchase.purchase import purchase_product
 
 # MAIN PROGRAM
 ##########
 
-result = pyfiglet.figlet_format("LUKU SHOP", font="doh", width=180)  # creates arwork with the words]
+result = pyfiglet.figlet_format("LUKU SHOP", font="doh", width=180)  # creates artwork with the words]
 welcome_message = """
 *************************************************************************************************************************************
 Welcome to Bruce Shoe store. You'll find a variety of men shoes kindly buy as many as possible cause you can never have enough shoes.
@@ -25,28 +26,23 @@ def disp_menu():
     Kindly select 0 to exit or the rest to execute the other operations:
         1. Customer Operations
         2. Products Operations
-        3. Queries
+        3. Purchase Product
         Q. To quite the program
     """)
 
+while True:
+    disp_menu()
+    user_input = input("Please choose an option:\n")
+    if user_input == "1":
+        customer_program()
+    elif user_input == "2":
+        products_program()
+    elif user_input == "3":
+        purchase_product()
+    elif user_input.upper() == "Q":
+        print("Exiting...........")
+        print("See you next time")
+        break
+    else:
+        print("Please enter a valid value in the range of 0 - 3")
 
-def main_program():
-    while True:
-        disp_menu()
-        user_input = input("Please choose an option:\n")
-        if user_input == "1":
-            customer_program()
-        elif user_input == "2":
-            products_program()
-        elif user_input == "3":
-            print("Welcome")
-            break
-        elif user_input.upper() == "Q":
-            print("Exiting...........")
-            print("See you next time")
-            break
-        else:
-            print("Please enter a valid value in the range of 0 - 3")
-
-
-main_program()

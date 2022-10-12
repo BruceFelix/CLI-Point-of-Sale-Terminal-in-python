@@ -1,9 +1,6 @@
 # Imports
 ####################
 import json
-from customeroperations.customer import user_json_file
-from customeroperations.customer import create_new_user
-from customeroperations.customer import goods_bought
 
 # Global variables
 #####################
@@ -20,8 +17,6 @@ def product_operations():
     print("\t2 To delete product.")
     print("\t3 To update product.")
     print("\t4 To view products in the system.")
-    print("\t5 Buy product.")
-    print("\t6 To go back to the main menu.")
     print("\tQ To quit the program.")
 
 
@@ -143,73 +138,14 @@ def goods_sold(name, goods_sold):
         json.dump(updated_product_list, f, indent=4)
 
 
-def check_user(customer):
+def display_shoes():
     """
-    Checks if a user exist or not.
+    Displays the shoes in store with their ids
     """
-    users = user_json_file()
-    # print(users)
-    for (index, entry) in enumerate(users):
-        if customer == entry["email"]:  # remember to use users input
-            return index
-        else:
-            continue
-    return False
-
-
-def purchase_product():
-    """
-    Function used to purchase product.
-    """
-    users = user_json_file()
-    customer = input("Please enter your email: \n")
-    index = check_user(customer)
-    if check_user(customer):
-        shoes = products_json_file()
-        view_product()
-        cart = []
-        while True:
-            print("Kindly choose the goods you want")
-            print("What type of shoes do you need to buy?")
-            for shoe_id, value in enumerate(shoes):
-                print(f"For {value['name']} at {value['price']} - enter {shoe_id}")
-            buyer_choice = input("Which shoe do you want?")
-            if buyer_choice == shoe_id:
-                pairs = input("How many do you want: ")
-                price = int(pairs) * int(shoes["price"])
-                print(price)
-                print(f"""
-                    ---------------------------------------
-                    Customer Receipt
-                    ---------------------------------------
-                    | Customer name : {users[int(index)]["name"]}
-                    | Product bought: {shoes['name']}
-                    | Total purchase: {price}
-                    ---------------------------------------
-                    Thank for shopping at Luku Shop
-                    ---------------------------------------
-                    """)
-            goods_bought(pairs, price, users[int(index)]['email'])
-            print("Do you want to continue shopping? ")
-            print("yes ")
-            print("no ")
-            user_choice = input("")
-            while True:
-                if user_choice.lower() == "yes":
-                    continue
-                elif user_choice.lower() == "no":
-                    break
-                else:
-                    print("Please choose valid answer.")
-            # goods_sold(buyer_choice, pairs)
-    else:
-        print("The is no such user kindly register them first.")
-        create_new_user()
-        print("Thank you for registering you may proceed.")
-        purchase_product()
-
-
-purchase_product()
+    print("What type of shoes do you need to buy?")
+    shoes = products_json_file()
+    for shoe_id, value in enumerate(shoes):
+        print(f"For {value['name']} at {value['price']} - enter {shoe_id}")
 
 
 def products_program():
@@ -227,14 +163,7 @@ def products_program():
             edit_product()
         elif operator_choice == "4":
             view_product()
-        elif operator_choice == "5":
-            purchase_product()
-
-        elif operator_choice == "6":
-            pass
         elif operator_choice.upper() == "Q":
             break
         else:
             print("Please a valid option.")
-
-# purchase_product()
