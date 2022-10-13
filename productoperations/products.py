@@ -17,7 +17,8 @@ def product_operations():
     print("\t2 To delete product.")
     print("\t3 To update product.")
     print("\t4 To view products in the system.")
-    print("\tQ To quit the program.")
+    print("\t5 To search a product in the system.")
+    print("\tQ To return to the main program.")
 
 
 def new_product():
@@ -148,6 +149,20 @@ def display_shoes():
         print(f"For {value['name']} at {value['price']} - enter {shoe_id}")
 
 
+def search_product():
+    """
+    Checks if a product exist or not.
+    """
+    products = products_json_file()
+    search_entry = input("Which product are you searching for:\n ")
+    for (index, entry) in enumerate(products):
+        if search_entry == entry["name"]:  # remember to use users input
+            return "There are", entry["quantity"], entry["name"], "'s", "available"
+        else:
+            continue
+    return "Product not available"
+
+
 def products_program():
     while True:
         """
@@ -163,6 +178,9 @@ def products_program():
             edit_product()
         elif operator_choice == "4":
             view_product()
+        elif operator_choice == "5":
+            print(search_product())
+
         elif operator_choice.upper() == "Q":
             break
         else:

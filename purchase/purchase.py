@@ -1,9 +1,10 @@
-from customeroperations.customer import  user_json_file
-from customeroperations.customer import  create_new_user
-from productoperations.products import  products_json_file
-from productoperations.products import  display_shoes
-from productoperations.products import  goods_sold
+from customeroperations.customer import user_json_file
+from customeroperations.customer import create_new_user
+from productoperations.products import products_json_file
+from productoperations.products import display_shoes
+from productoperations.products import goods_sold
 from customeroperations.customer import goods_bought
+
 
 def check_user(customer):
     """
@@ -25,6 +26,7 @@ def purchase_product():
     """
     users = user_json_file()
     shoes = products_json_file()
+    print("Welcome again to shop with us. ")
     customer = input("Please enter your email: \n")
     index = check_user(customer)
     main_cart = []
@@ -76,4 +78,4 @@ _________________________________________________
         print("The is no such user kindly register them first.")
         create_new_user()
         print("Thank you for registering you may proceed.")
-        # purchase_product()
+        purchase_product()
