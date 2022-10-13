@@ -15,7 +15,6 @@ The data will be stored in a json file.
 # Product Setup
 To run this program in your local machine, clone it to your local machine and execute the following commands:
 
-
 `$ git@github.com:BruceFelix/CLI-Point-of-Sale-Terminal-in-python.git`
 
 `$ cd CLI-Point-of-Sale-Terminal-in-python`
