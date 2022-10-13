@@ -1,6 +1,7 @@
 # imports
 ######################
 import json
+
 # Global Variable
 #####################
 
@@ -17,7 +18,8 @@ def customer_operations():
     print("\t2 To delete User.")
     print("\t3 To update User.")
     print("\t4 To view users in the system.")
-    print("\tQ To quit the program.")
+    print("\t5 To search for a user in the system.")
+    print("\tQ To return to the main program.")
 
 
 def new_customer():
@@ -44,7 +46,7 @@ def user_json_file():
     return data
 
 
-def view_user():
+def view_users():
     """
     Prints User data.
     """
@@ -68,12 +70,26 @@ def create_new_user():
         json.dump(temp, f, indent=4)
 
 
+def search_user():
+    """
+    Checks if a user exist or not.
+    """
+    users = user_json_file()
+    search_entry = input("Please enter the user email you are searching for:\n ")
+
+    for (index, entry) in enumerate(users):
+        if search_entry == entry["email"]:  # remember to use users input
+            return entry
+        else:
+            continue
+    return "Product not available"
+
 def delete_user():
     """
     Deletes the selected user.
     """
     new_list_of_users = []
-    view_user()  # prints user data
+    view_users()  # prints user data
     data = user_json_file()  # loads user data from the json file
     data_length = len(data) - 1  # gets the total value of users in the json file
     print("Which user would you like to delete? \n")
@@ -104,7 +120,7 @@ def edit_user():
     Edit the selected user.
     """
     new_list_of_users = []
-    view_user()  # prints user data
+    view_users()  # prints user data
     data = user_json_file()  # loads user data from the json file
     data_length = len(data) - 1  # gets the total value of users in the json file
     print("Which user would you like to update? \n")
@@ -184,9 +200,10 @@ def customer_program():
         elif operator_choice == "3":
             edit_user()
         elif operator_choice == "4":
-            view_user()
+            view_users()
+        elif operator_choice == "5":
+            print(search_user())
         elif operator_choice.upper() == "Q":
             break
         else:
             print("Please a valid option.")
-

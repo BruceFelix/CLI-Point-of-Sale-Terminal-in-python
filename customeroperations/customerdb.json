@@ -3,8 +3,8 @@
         "name": "Bruce Felix Macharia",
         "email": "cybernomand@gmail.com",
         "number": "0774206991",
-        "products": 10,
-        "expenditure": 3500
+        "products": 20,
+        "expenditure": 38500
     },
     {
         "name": "Jeff Bezos",
@@ -54,6 +54,5 @@
         "number": "233432233",
         "products": 0,
         "expenditure": 0
-    },
-
+    }
 ]

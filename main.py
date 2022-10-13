@@ -9,7 +9,7 @@ from purchase.purchase import purchase_product
 # MAIN PROGRAM
 ##########
 
-result = pyfiglet.figlet_format("LUKU SHOP", font="doh", width=180)  # creates artwork with the words]
+result = pyfiglet.figlet_format("LUKU SHOP", width=180)  # creates artwork with the words]
 welcome_message = """
 *************************************************************************************************************************************
 Welcome to Bruce Shoe store. You'll find a variety of men shoes kindly buy as many as possible cause you can never have enough shoes.
@@ -30,6 +30,7 @@ def disp_menu():
         Q. To quite the program
     """)
 
+
 while True:
     disp_menu()
     user_input = input("Please choose an option:\n")
@@ -45,4 +46,3 @@ while True:
         break
     else:
         print("Please enter a valid value in the range of 0 - 3")
-
