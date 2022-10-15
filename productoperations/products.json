@@ -1,22 +1,22 @@
 [
     {
         "name": "Balenciaga",
-        "quantity": 440,
+        "quantity": 349,
         "price": "3500"
     },
     {
         "name": "Timberland",
-        "quantity": 480,
+        "quantity": 330,
         "price": "5000"
     },
     {
         "name": "Clarks",
-        "quantity": 480,
+        "quantity": 458,
         "price": "3500"
     },
     {
         "name": "Nikes",
-        "quantity": 500,
+        "quantity": 470,
         "price": "2500"
     }
 ]
