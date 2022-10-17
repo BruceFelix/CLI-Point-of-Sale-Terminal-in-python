@@ -1,6 +1,9 @@
 # imports
 ######################
 import json
+from validate_email import validate_email
+import re
+from termcolor import colored
 
 # Global Variable
 #####################
@@ -30,8 +33,21 @@ def new_customer():
     print("Kindly enter the details of the new customer: \n")
     # gets user details and adds them to the user dictionary.
     user["name"] = input("Name: ")
-    user["email"] = input("Email: ")
-    user["number"] = input("Phone Number: ")
+    while True:
+        email = input("Please enter a valid email address:\n ")
+        if validate_email(email):
+            user['email'] = email
+            break
+        else:
+            continue
+    while True:
+        number = input("Please enter a valid phone number: \n")
+        pattern = r"^[07]|[01][0-9]{9}$"
+        if re.match(pattern, number):
+            user['number'] = number
+            break
+        else:
+            continue
     user["products"] = 0
     user["expenditure"] = 0
     return user
@@ -195,6 +211,7 @@ def customer_program():
         operator_choice = input("Kindly choose an operation: \n")
         if operator_choice == "1":
             create_new_user()
+            print(colored("User created successfully!"))
         elif operator_choice == "2":
             delete_user()
         elif operator_choice == "3":

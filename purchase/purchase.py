@@ -10,7 +10,7 @@ import ssl
 import smtplib
 
 SID = "AC0727486ff6ed1ba4f0e4ec8e8962000d"
-Auth_Token = "25daccf32895fb944d524ed7d9244704"
+Auth_Token = "********************************"
 email_sender = "brucefelixm@gmail.com"
 email_password = "umjvcgazdnkkpcbm"
 email_receiver = "cybernomand@gmail.com"
@@ -114,4 +114,3 @@ def send_receipt_message(receipt):
     cl.messages.create(body=msg_body + receipt, from_="+13464822642", to="+254792743861")
 
 
-purchase_product()
