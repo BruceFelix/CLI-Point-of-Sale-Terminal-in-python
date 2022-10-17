@@ -61,5 +61,26 @@
         "number": "2392402323",
         "products": 74,
         "expenditure": 514000
+    },
+    {
+        "name": "Jamyo Ule Msee",
+        "email": "jamyo@gmail.com",
+        "number": "0232323",
+        "products": 0,
+        "expenditure": 0
+    },
+    {
+        "name": "Alexa",
+        "email": "alexa@yahoo.com",
+        "number": "32323",
+        "products": 0,
+        "expenditure": 0
+    },
+    {
+        "name": "Kenya Wangui",
+        "email": "Kenya@gmail.com",
+        "number": "0792349233",
+        "products": 0,
+        "expenditure": 0
     }
 ]
