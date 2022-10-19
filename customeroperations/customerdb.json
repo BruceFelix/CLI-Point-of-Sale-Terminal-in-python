@@ -1,8 +1,8 @@
 [
     {
-        "name": "Bruce Macharia",
+        "name": "Bruce Felix Macharia",
         "email": "cybernomand@gmail.com",
-        "number": "0792743861",
+        "number": "0774206991",
         "products": 20,
         "expenditure": 38500
     },
@@ -10,8 +10,8 @@
         "name": "Jeff Bezos",
         "email": "jeff@gmail.com",
         "number": "0242342332",
-        "products": 108,
-        "expenditure": 776500
+        "products": 0,
+        "expenditure": 0
     },
     {
         "name": "James Wong",
@@ -38,8 +38,8 @@
         "name": "BruceFelix Macharia Mwangi",
         "email": "brucefelixm@gmail.com",
         "number": "0923322332",
-        "products": 301,
-        "expenditure": 1419000
+        "products": 80,
+        "expenditure": 90500
     },
     {
         "name": "Margaret Matheri",
@@ -52,27 +52,6 @@
         "name": "Ann waruguru",
         "email": "waruguru@gmail.com",
         "number": "233432233",
-        "products": 0,
-        "expenditure": 0
-    },
-    {
-        "name": "Albert Kahira",
-        "email": "albert@jengaschool.com",
-        "number": "2392402323",
-        "products": 74,
-        "expenditure": 514000
-    },
-    {
-        "name": "Alex Mwangi",
-        "email": "alex@gmail.com",
-        "number": "0792438711",
-        "products": 0,
-        "expenditure": 0
-    },
-    {
-        "name": "Bill Gates",
-        "email": "billgates@gmail.com",
-        "number": "0101010101",
         "products": 0,
         "expenditure": 0
     }
