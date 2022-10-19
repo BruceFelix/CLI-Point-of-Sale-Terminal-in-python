@@ -15,7 +15,6 @@ def customer_operations():
     """
     Has the customer operations.
     """
-    print("Welcome to customer operations.")
     print("Choose the operation you want to execute: ")
     print("\t1 To create New User.")
     print("\t2 To delete User.")
@@ -23,6 +22,26 @@ def customer_operations():
     print("\t4 To view users in the system.")
     print("\t5 To search for a user in the system.")
     print("\tQ To return to the main program.")
+
+
+def email_verifier():
+    while True:
+        email = input("Please enter a valid email address:\n ")
+        if validate_email(email):
+            return email
+        else:
+            continue
+
+
+def phone_number_verifier():
+    while True:
+        number = input("Please enter a valid Kenyan phone number: \n")
+        pattern = r"^[07]|[01][0-9]{9}$"
+        if re.match(pattern, number):
+            return number
+            break
+        else:
+            continue
 
 
 def new_customer():
@@ -33,21 +52,8 @@ def new_customer():
     print("Kindly enter the details of the new customer: \n")
     # gets user details and adds them to the user dictionary.
     user["name"] = input("Name: ")
-    while True:
-        email = input("Please enter a valid email address:\n ")
-        if validate_email(email):
-            user['email'] = email
-            break
-        else:
-            continue
-    while True:
-        number = input("Please enter a valid phone number: \n")
-        pattern = r"^[07]|[01][0-9]{9}$"
-        if re.match(pattern, number):
-            user['number'] = number
-            break
-        else:
-            continue
+    user['email'] = email_verifier()
+    user['number'] = phone_number_verifier()
     user["products"] = 0
     user["expenditure"] = 0
     return user
@@ -70,8 +76,7 @@ def view_users():
     i = 0
     print("These are the users in the system")
     for entry in temp:
-        print(f"User: {i} ")
-        print(entry)
+        print(f"User: {i} Name:", entry['name'], "Email:", entry['email'])
         i += 1
 
 
@@ -91,14 +96,15 @@ def search_user():
     Checks if a user exist or not.
     """
     users = user_json_file()
-    search_entry = input("Please enter the user email you are searching for:\n ")
+    search_entry = input("Please enter the user's email:\n ")
 
     for (index, entry) in enumerate(users):
         if search_entry == entry["email"]:  # remember to use users input
-            return entry
+            return colored((entry['name'] + " found!\n"), "green")
         else:
             continue
-    return "Product not available"
+    return colored("User not registered!!\n", "red")
+
 
 def delete_user():
     """
@@ -110,14 +116,15 @@ def delete_user():
     data_length = len(data) - 1  # gets the total value of users in the json file
     print("Which user would you like to delete? \n")
     choice = input("""\n
-    If you wish to proceed enter yes:
-    To cancel enter no:    
+If you wish to proceed enter yes:
+To cancel enter no:    
     """)
     if choice.lower() == "yes":
         delete_user_option = input(f"Select a number 0 - {data_length}\n")
         i = 0
         for entry in data:
             if i == int(delete_user_option):
+                print(colored((entry['name'], "has been deleted\n"), "red"))
                 pass
                 # this part skips the part we want to delete and appends the rest to the file
                 i += 1
@@ -140,9 +147,9 @@ def edit_user():
     data = user_json_file()  # loads user data from the json file
     data_length = len(data) - 1  # gets the total value of users in the json file
     print("Which user would you like to update? \n")
-    choice = input("""\n
-        If you wish to proceed enter yes:
-        To cancel enter no:    
+    choice = input("""
+If you wish to proceed enter yes:
+To cancel enter no:    
         """)
     if choice.lower() == "yes":
         delete_user_option = input(f"Select a number 0 - {data_length}\n")
@@ -153,8 +160,8 @@ def edit_user():
                 Takes the  selected user details and updates them to new values.
                 """
                 name = input("Enter the new name your want: \n")
-                email = input("Enter the new email your want: \n")
-                number = input("Enter the new number your want: \n")
+                email = email_verifier()
+                number = phone_number_verifier()
                 product = entry["products"]
                 expenditure = entry["expenditure"]
                 updated_user = {
@@ -165,6 +172,8 @@ def edit_user():
                     "expenditure": expenditure
                 }
                 new_list_of_users.append(updated_user)
+                print(colored("User updated! \n", "green"))
+                i += 1
             else:
                 new_list_of_users.append(entry)
                 i += 1
@@ -203,6 +212,7 @@ def goods_bought(quantity, price, email):
 
 
 def customer_program():
+    print(colored("Welcome to customer operations.\n", "green"))
     while True:
         """
         Displays user operations.
@@ -211,13 +221,14 @@ def customer_program():
         operator_choice = input("Kindly choose an operation: \n")
         if operator_choice == "1":
             create_new_user()
-            print(colored("User created successfully!"))
+            print(colored("User created successfully!\n", "green"))
         elif operator_choice == "2":
             delete_user()
         elif operator_choice == "3":
             edit_user()
         elif operator_choice == "4":
             view_users()
+            print("\n\n")
         elif operator_choice == "5":
             print(search_user())
         elif operator_choice.upper() == "Q":

@@ -1,6 +1,7 @@
 # Imports
 ####################
 import json
+from termcolor import colored
 
 # Global variables
 #####################
@@ -11,7 +12,6 @@ def product_operations():
     """
     Has the product operations.
     """
-    print("Welcome to product operations.")
     print("Choose the operation you want to execute: ")
     print("\t1 To create New product.")
     print("\t2 To delete product.")
@@ -50,7 +50,7 @@ def view_product():
     temp = products_json_file()
     i = 0
     for entry in temp:
-        print(f"Product: {i} ", entry)
+        print(f"Product: {i} ", entry['name'])
         i += 1
 
 
@@ -78,6 +78,7 @@ def delete_product():
     i = 0
     for entry in data:
         if i == int(delete_product_option):
+            print(colored((entry["name"] + " deleted!2\n3"), "red"))
             pass
             # this part skips the part we want to delete and appends the rest to the file
             i += 1
@@ -102,12 +103,19 @@ def edit_product():
     for entry in data:
         if i == int(update_product_option):
             """
-            Takes the  selected user details and updates them to new values.
+            Takes the  selected product1 details and updates them to new values.
             """
             name = input("Enter the new name your want: \n")
             quantity = input("Enter the new quantity your want: \n")
             shoe_price = input("Enter the new price your want: \n")
-            new_list_of_products.append({"name": name, "quantity": quantity, "price": shoe_price})
+            updated_product = {
+                "name": name,
+                "quantity": quantity,
+                "price": shoe_price
+            }
+            new_list_of_products.append(updated_product)
+            print(colored((entry['name'] + " has been updated!\n"), "green"))
+            i += 1
         else:
             new_list_of_products.append(entry)
             i += 1
@@ -143,7 +151,7 @@ def display_shoes():
     """
     Displays the shoes in store with their ids
     """
-    print("What type of shoes do you need to buy?")
+    print("\nWhat type of shoes do you need to buy?\n")
     shoes = products_json_file()
     for shoe_id, value in enumerate(shoes):
         print(f"For {value['name']} at {value['price']} - enter {shoe_id}")
@@ -157,13 +165,15 @@ def search_product():
     search_entry = input("Which product are you searching for:\n ")
     for (index, entry) in enumerate(products):
         if search_entry == entry["name"]:  # remember to use users input
-            return "There are", entry["quantity"], entry["name"], "'s", "available"
+            return "There are " + entry["quantity"] + " " + entry["name"] + "'s available"
         else:
             continue
     return "Product not available"
 
 
 def products_program():
+    print(colored("Welcome to product operations.\n", "green"))
+
     while True:
         """
         Displays user operations.
@@ -172,16 +182,19 @@ def products_program():
         operator_choice = input("Kindly choose an operation: \n")
         if operator_choice == "1":
             create_new_product()
+            print(colored("New product added\n", "green"))
         elif operator_choice == "2":
             delete_product()
         elif operator_choice == "3":
             edit_product()
         elif operator_choice == "4":
             view_product()
+            print("\n")
         elif operator_choice == "5":
             print(search_product())
-
+            print("\n")
         elif operator_choice.upper() == "Q":
             break
         else:
             print("Please a valid option.")
+
