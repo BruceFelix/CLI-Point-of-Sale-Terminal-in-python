@@ -10,8 +10,8 @@
         "name": "Jeff Bezos",
         "email": "jeff@gmail.com",
         "number": "0242342332",
-        "products": 108,
-        "expenditure": 776500
+        "products": 0,
+        "expenditure": 0
     },
     {
         "name": "James Wong",
@@ -38,8 +38,8 @@
         "name": "BruceFelix Macharia Mwangi",
         "email": "brucefelixm@gmail.com",
         "number": "0923322332",
-        "products": 191,
-        "expenditure": 869000
+        "products": 80,
+        "expenditure": 90500
     },
     {
         "name": "Margaret Matheri",
@@ -52,34 +52,6 @@
         "name": "Ann waruguru",
         "email": "waruguru@gmail.com",
         "number": "233432233",
-        "products": 0,
-        "expenditure": 0
-    },
-    {
-        "name": "Albert Kahira",
-        "email": "albert@jengaschool.com",
-        "number": "2392402323",
-        "products": 74,
-        "expenditure": 514000
-    },
-    {
-        "name": "Jamyo Ule Msee",
-        "email": "jamyo@gmail.com",
-        "number": "0232323",
-        "products": 0,
-        "expenditure": 0
-    },
-    {
-        "name": "Alexa",
-        "email": "alexa@yahoo.com",
-        "number": "32323",
-        "products": 0,
-        "expenditure": 0
-    },
-    {
-        "name": "Kenya Wangui",
-        "email": "Kenya@gmail.com",
-        "number": "0792349233",
         "products": 0,
         "expenditure": 0
     }
