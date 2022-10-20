@@ -1,8 +1,8 @@
 [
     {
-        "name": "Bruce Felix Macharia",
+        "name": "Bruce Macharia",
         "email": "cybernomand@gmail.com",
-        "number": "0774206991",
+        "number": "0792743861",
         "products": 20,
         "expenditure": 38500
     },
@@ -38,8 +38,8 @@
         "name": "BruceFelix Macharia Mwangi",
         "email": "brucefelixm@gmail.com",
         "number": "0923322332",
-        "products": 191,
-        "expenditure": 869000
+        "products": 301,
+        "expenditure": 1419000
     },
     {
         "name": "Margaret Matheri",
@@ -61,5 +61,19 @@
         "number": "2392402323",
         "products": 74,
         "expenditure": 514000
+    },
+    {
+        "name": "Alex Mwangi",
+        "email": "alex@gmail.com",
+        "number": "0792438711",
+        "products": 0,
+        "expenditure": 0
+    },
+    {
+        "name": "Bill Gates",
+        "email": "billgates@gmail.com",
+        "number": "0101010101",
+        "products": 0,
+        "expenditure": 0
     }
 ]
