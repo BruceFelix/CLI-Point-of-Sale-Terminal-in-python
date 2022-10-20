@@ -48,7 +48,7 @@ def authentication(username, password):
 
 
 while True:
-    # authentication(default_username, default_password)
+    authentication(default_username, default_password)
     disp_menu()
     user_input = input("Please choose an option:\n")
     if user_input == "1":
