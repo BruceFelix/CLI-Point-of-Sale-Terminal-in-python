@@ -5,12 +5,13 @@ from productoperations.products import display_shoes
 from productoperations.products import goods_sold
 from productoperations.products import products_json_file
 from email.message import EmailMessage
+from termcolor import colored
 from twilio.rest import Client
 import ssl
 import smtplib
 
 SID = "AC0727486ff6ed1ba4f0e4ec8e8962000d"
-Auth_Token = "25daccf32895fb944d524ed7d9244704"
+Auth_Token = "********************************"
 email_sender = "brucefelixm@gmail.com"
 email_password = "umjvcgazdnkkpcbm"
 email_receiver = "cybernomand@gmail.com"
@@ -37,14 +38,14 @@ def purchase_product():
     """
     users = user_json_file()
     shoes = products_json_file()
-    print("Welcome again to shop with us. ")
-    customer = input("Please enter your email: \n")
+    print(colored("Remember to smile at the customer.", "green"))
+    customer = input("Please enter the customer's email: \n")
     index = check_user(customer)
     main_cart = []
     if check_user(customer):
         while True:
             display_shoes()
-            buyer_choice = input("Which shoe do you want?\n")
+            buyer_choice = input("\nWhich shoe do you want?\n")
             pairs = input("How many pairs do you need?\n")
             cart = [shoes[int(buyer_choice)]["name"], int(pairs), shoes[int(buyer_choice)]["price"],
                     int(pairs) * int(shoes[int(buyer_choice)]["price"])]
@@ -76,17 +77,16 @@ _________________________________________________
 {the_join}         
 Total purchase cost  : {total_cost}
 _________________________________________________   
+Thank you for shopping with us.
         """
 
         print(receipt)
-        recipient = input("Do you want the receipt to be sent to your email, as an SMS or both:\n ")
+        recipient = input("Do you want the receipt to be sent to your email or as an SMS:\n ")
         if recipient.lower() == "email":
             send_receipt_mail(receipt)
         elif recipient.lower() == "sms":
             send_receipt_message(receipt)
-        elif recipient.lower() == "both":
-            send_receipt_mail(receipt)
-            send_receipt_message(recipient)
+        print(colored("Transactions complete. Remember to thank them as you hand them the receipt :) ", "green"))
 
     else:
         print("The is no such user kindly register them first.")
