@@ -1,12 +1,12 @@
 [
     {
         "name": "Balenciaga",
-        "quantity": 900,
-        "price": "5000"
+        "quantity": 349,
+        "price": "3500"
     },
     {
         "name": "Timberland",
-        "quantity": 320,
+        "quantity": 330,
         "price": "5000"
     },
     {
@@ -15,13 +15,8 @@
         "price": "3500"
     },
     {
-        "name": "Jordans",
-        "quantity": "100",
-        "price": "5000"
-    },
-    {
-        "name": "Gideon boots",
-        "quantity": "100",
+        "name": "Nikes",
+        "quantity": 470,
         "price": "2500"
     }
 ]
