@@ -114,4 +114,3 @@ def send_receipt_message(receipt):
     cl.messages.create(body=msg_body + receipt, from_="+13464822642", to="+254792743861")
 
 
-purchase_product()
