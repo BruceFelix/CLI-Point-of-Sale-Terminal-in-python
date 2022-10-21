@@ -17,6 +17,7 @@ The data will be stored in a json file.
 ## Tools used
 - Python
 - Pycharm IDE
+- Gmail
 ## Main Menu
 By running the main file the menu below is displayed.
 ![image](https://user-images.githubusercontent.com/44478872/197124400-d4787dbc-7873-4f6e-bf90-fa60b22ebaac.png)
