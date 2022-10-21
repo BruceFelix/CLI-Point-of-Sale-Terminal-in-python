@@ -81,12 +81,12 @@ Thank you for shopping with us.
         """
 
         print(receipt)
-        recipient = input("Do you want the receipt to be sent to your email or as an SMS:\n ")
-        if recipient.lower() == "email":
+        recipient = input("Do you want the receipt to be sent to your email:\n ")
+        if recipient.lower() == "yes":
             send_receipt_mail(receipt)
-        elif recipient.lower() == "sms":
-            send_receipt_message(receipt)
-        print(colored("Transactions complete. Remember to thank them as you hand them the receipt :) ", "green"))
+        # elif recipient.lower() == "sms":
+        #     send_receipt_message(receipt)
+        # print(colored("Transactions complete. Remember to thank them as you hand them the receipt :) ", "green"))
 
     else:
         print("The is no such user kindly register them first.")
@@ -98,8 +98,8 @@ def send_receipt_mail(receipt):
     em = EmailMessage()
     em['From'] = email_sender
     em['To'] = email_sender
-    em['subject'] = msg_body
-    em.set_content(receipt)
+    em['subject'] = email_sender
+    em.set_content(msg_body + receipt)
 
     context = ssl.create_default_context()
 
@@ -108,9 +108,9 @@ def send_receipt_mail(receipt):
         smtp.sendmail(email_sender, email_receiver, em.as_string())
 
 
-def send_receipt_message(receipt):
-    body = msg_body + receipt
-    cl = Client(SID, Auth_Token)
-    cl.messages.create(body=msg_body + receipt, from_="+13464822642", to="+254792743861")
-
+# def send_receipt_message(receipt):
+#     body = msg_body + receipt
+#     cl = Client(SID, Auth_Token)
+#     cl.messages.create(body=msg_body + receipt, from_="+13464822642", to="+254792743861")
+#
 

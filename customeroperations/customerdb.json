@@ -1,17 +1,17 @@
 [
     {
-        "name": "Bruce Macharia",
+        "name": "BruceFelix Macharia",
         "email": "cybernomand@gmail.com",
         "number": "0792743861",
-        "products": 20,
-        "expenditure": 38500
+        "products": 30,
+        "expenditure": 148500
     },
     {
         "name": "Jeff Bezos",
         "email": "jeff@gmail.com",
         "number": "0242342332",
-        "products": 108,
-        "expenditure": 776500
+        "products": 118,
+        "expenditure": 826500
     },
     {
         "name": "James Wong",
@@ -38,8 +38,8 @@
         "name": "BruceFelix Macharia Mwangi",
         "email": "brucefelixm@gmail.com",
         "number": "0923322332",
-        "products": 301,
-        "expenditure": 1419000
+        "products": 331,
+        "expenditure": 1669000
     },
     {
         "name": "Margaret Matheri",

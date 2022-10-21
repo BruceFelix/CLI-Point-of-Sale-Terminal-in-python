@@ -74,7 +74,7 @@ def view_users():
     """
     temp = user_json_file()
     i = 0
-    print("These are the users in the system")
+    print("\nThese are the users in the system")
     for entry in temp:
         print(f"User: {i} Name:", entry['name'], "Email:", entry['email'])
         i += 1
@@ -114,7 +114,7 @@ def delete_user():
     view_users()  # prints user data
     data = user_json_file()  # loads user data from the json file
     data_length = len(data) - 1  # gets the total value of users in the json file
-    print("Which user would you like to delete? \n")
+    print("\nWhich user would you like to delete? \n")
     choice = input("""\n
 If you wish to proceed enter yes:
 To cancel enter no:    
@@ -150,7 +150,7 @@ def edit_user():
     choice = input("""
 If you wish to proceed enter yes:
 To cancel enter no:    
-        """)
+        \n""")
     if choice.lower() == "yes":
         delete_user_option = input(f"Select a number 0 - {data_length}\n")
         i = 0
