@@ -21,24 +21,24 @@ Three operations will be displayed which the shop attendant can operate after lo
 
 ## Customer operations
 Customer operations include:
-  1 To create New User.
-  2 To delete User.
-  3 To update User.
-  4 To view users in the system.
-  5 To search for a user in the system.
-  Q To return to the main program.
+  1. To create New User.
+  2. To delete User.
+  3. To update User.
+  4. To view users in the system.
+  5. To search for a user in the system.
+  Q. To return to the main program.
 
 The following operations will be displayed in the customer menu.
 ![image](https://user-images.githubusercontent.com/44478872/197124790-e98d3753-ba82-4d0b-98da-96e6ed299392.png)
 
 ## Products operations
 Products operations include:
-  1 To create New product.
-  2 To delete product.
-  3 To update product.
-  4 To view products in the system.
-  5 To search a product in the system.
-  Q To return to the main program.
+  1. To create New product.
+  2. To delete product.
+  3. To update product.
+  4. To view products in the system.
+  5. To search a product in the system.
+  Q. To return to the main program.
 The following operations will be displayed in the products menu.
 ![image](https://user-images.githubusercontent.com/44478872/197125884-9180f160-420e-41fa-8645-9829b19f0a3d.png)
 
