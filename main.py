@@ -27,7 +27,7 @@ print(colored(welcome_message, "blue"))
 
 def disp_menu():
     print("""
-Kindly select 0 to exit or the rest to execute the other operations:
+Kindly select Q to exit or the rest to execute the other operations:
     1. Customer Operations
     2. Products Operations
     3. Purchase Product
@@ -47,8 +47,9 @@ def authentication(username, password):
             print(colored("\nAuthentication failure!!!\n", 'red'))
 
 
+
+authentication(default_username, default_password)
 while True:
-    authentication(default_username, default_password)
     disp_menu()
     user_input = input("Please choose an option:\n")
     if user_input == "1":
