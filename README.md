@@ -14,6 +14,11 @@ Implement a python program that starts with a menu, gets user menu choice and pr
 The data will be stored in a json file.
 
 # Final Product description
+## Tools used
+- Python
+- Pycharm IDE
+- Gmail
+- JSON
 ## Main Menu
 By running the main file the menu below is displayed.
 ![image](https://user-images.githubusercontent.com/44478872/197124400-d4787dbc-7873-4f6e-bf90-fa60b22ebaac.png)
