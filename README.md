@@ -26,7 +26,7 @@ Customer operations include:
   3. To update User.
   4. To view users in the system.
   5. To search for a user in the system.
-  6. 
+  
   Q. To return to the main program.
   
 
@@ -40,7 +40,8 @@ Products operations include:
   3. To update product.
   4. To view products in the system.
   5. To search a product in the system.
-  6. Q. To return to the main program.
+  
+  Q. To return to the main program.
   
 The following operations will be displayed in the products menu.
 ![image](https://user-images.githubusercontent.com/44478872/197125884-9180f160-420e-41fa-8645-9829b19f0a3d.png)
