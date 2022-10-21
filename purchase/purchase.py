@@ -98,8 +98,8 @@ def send_receipt_mail(receipt):
     em = EmailMessage()
     em['From'] = email_sender
     em['To'] = email_sender
-    em['subject'] = email_sender
-    em.set_content(msg_body + receipt)
+    em['subject'] = msg_body
+    em.set_content(receipt)
 
     context = ssl.create_default_context()
 

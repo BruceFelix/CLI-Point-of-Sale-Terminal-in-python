@@ -36,7 +36,7 @@ def email_verifier():
 def phone_number_verifier():
     while True:
         number = input("Please enter a valid Kenyan phone number: \n")
-        pattern = r"^[07]|[01][0-9]{9}$"
+        pattern = r"^(07|01)([0-9])(\d){7}$"
         if re.match(pattern, number):
             return number
             break
