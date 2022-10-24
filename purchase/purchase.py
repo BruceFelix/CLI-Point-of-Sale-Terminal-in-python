@@ -10,11 +10,11 @@ from twilio.rest import Client
 import ssl
 import smtplib
 
-SID = "AC0727486ff6ed1ba4f0e4ec8e8962000d"
+SID = "***************************"
 Auth_Token = "********************************"
-email_sender = "brucefelixm@gmail.com"
-email_password = "umjvcgazdnkkpcbm"
-email_receiver = "cybernomand@gmail.com"
+email_sender = "johndoe@gmail.com"
+email_password = "***********"
+email_receiver = "janedoe@gmail.com"
 msg_body = "Receipt from Bruce's Luku shoe shop.\n\n"
 
 
