@@ -10,8 +10,8 @@ from getpass import getpass
 # This module is used to hide the password and username for security purposes
 
 # VARIABLES
-default_username = "adminBruce"
-default_password = "brucepasscode"
+default_username = "******" #choose your username
+default_password = "*********" # choose your password
 # MAIN PROGRAM
 ##########
 
