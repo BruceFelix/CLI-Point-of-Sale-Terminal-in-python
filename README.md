@@ -1,6 +1,7 @@
 # `CLI-Point-of-Sale-Terminal-in-python` #
 ## `SEPA Sprint 1` ##
 A POS of system operated through the terminal
+[Blog](https://medium.com/@brucefelixm/coding-journey-jenga-school-kenya-77cb0b41e358)
 ## Product Description ##
 Create a command line driven point of sale terminal in Python.
 The program's key features are:
